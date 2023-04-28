@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+    color: white;
+}
+.container{
+    color: white;
+}
+thead{
+    color: rgb(248, 242, 242);
+}
+tbody{
+    color: rgb(221, 218, 218);
+}

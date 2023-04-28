@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSV Upload</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+
+  <body>
+    <!-- home.ejs -->
+
+    <div class="container">
+      <!-- <h1>CSV Upload</h1> -->
+      <div>
+        <span style="font-weight: 500; font-size: 2.5rem; color: red; margin-left: 2rem;">C</span>
+        <span style="font-weight: 500; font-size: 2.5rem; color: purple;">S</span>
+        <span style="font-weight: 500; font-size: 2.5rem; color: yellow; margin-right: 1rem;">V</span>
+        <span style="font-weight: 500; font-size: 2.5rem; color: orange;">U</span>
+        <span style="font-weight: 500; font-size: 2.5rem; color: blue;">p</span>
+        <span style="font-weight: 500; font-size: 2.5rem; color: pink;">l</span>
+        <span style="font-weight: 500; font-size: 2.5rem; color: magenta;">o</span>
+        <span style="font-weight: 500; font-size: 2.5rem; color: green;">a</span>
+        <span style="font-weight: 500; font-size: 2.5rem; color: maroon;">d</span>
+        <img style="margin-top: -1.1rem; margin-left: 0.8rem;" src="/image/icon.png" alt="">
+      </div>
+      <form id="form-id" action="/upload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="csvFile">Select a CSV file to upload:</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="csvFile"
+            name="csv"
+            accept=".csv"
+          />
+        </div>
+        <button type="submit" class="btn-upload">Upload</button>
+      </form>
+    </div>
+
+    <h1 class="upload-files">Uploaded Files <img src="/image/icon.png" alt=""></h1>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>FILENAME</th>
+          <th></th>
+          <th></th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% files.forEach(function(file) { %>
+        <tr>
+          <td><%= file.filename %></td>
+          <td></td>
+          <td></td>
+          <td>
+            <a href="/csv/<%= file._id %>">View</a>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
