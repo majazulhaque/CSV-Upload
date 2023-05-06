@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/CSV_Upload');
+mongoose.connect(process.env.MONGO_URI);
 
 const db = mongoose.connection;
 
@@ -13,3 +13,5 @@ db.once('open', function(){
 });
 
 module.exports = db;
+
+//'mongodb://127.0.0.1:27017/CSV_Upload'
