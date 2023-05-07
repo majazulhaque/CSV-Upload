@@ -68,8 +68,7 @@ module.exports.upload = async function (req, res) {
 // Function to view a CSV file
 module.exports.view = async function (req, res) {
   try {
-    const options = { maxTimeMS: 30000 }; // 30-second timeout
-    const csvFile = await CSV.findById(req.params.id,null,options);
+    const csvFile = await CSV.findById(req.params.id);
     if (!csvFile) {
       return res.status(404).send('File not found');
     }
