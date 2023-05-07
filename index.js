@@ -12,6 +12,8 @@ app.use(express.static('assets'));
 
 app.use(expressLayouts);
 
+console.log(process.env);
+
 //ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -25,7 +27,7 @@ app.use('/', require('./routes/csvRoutes'));
 
 //server listening
 app.listen(port, (err) => {
-    if(err) console.log("error listening on", port);
+    if(err) console.log("error listening on", `${port}`);
 
-    console.log('listening on port', port);
+    console.log('listening on port', `${port}`);
 })
