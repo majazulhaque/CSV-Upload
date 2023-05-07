@@ -15,3 +15,5 @@ db.once('open', function(){
 module.exports = db;
 
 //'mongodb://127.0.0.1:27017/CSV_Upload'
+
+//mongodb+srv://majazhaq98:5GjGPlljnRd0RroL@cluster0.2keidbn.mongodb.net/CSV_upload
