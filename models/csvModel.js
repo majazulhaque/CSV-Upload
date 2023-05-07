@@ -15,4 +15,6 @@ const csvSchema = new mongoose.Schema({
   timestamps: true,
 });
 
+csvSchema.index({filename: 1});
+
 module.exports = mongoose.model('CSV', csvSchema);
