@@ -6,7 +6,8 @@ const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ limit: '10mb', parameterLimit: 1000000 }));
+
 //Server static files
 app.use(express.static('assets'));
 
